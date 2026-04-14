@@ -1,0 +1,99 @@
+<!-- =======================================================
+     Semana 5 - Navbar principal del sistema
+     =======================================================
+     Este navbar:
+     - solo se muestra cuando hay sesión iniciada
+     - muestra el nombre del usuario y su rol
+     - cambia opciones según permisos
+     ======================================================= -->
+
+@if (usuarioActual()) {
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-principal shadow-sm">
+    <div class="container-fluid px-3 px-md-4">
+
+      <!-- Marca del sistema -->
+      <a class="navbar-brand fw-bold" routerLink="/usuarios">
+        📚 Usuario Control
+      </a>
+
+      <!-- Botón responsive -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSistema"
+        aria-controls="navbarSistema"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Contenido colapsable -->
+      <div class="collapse navbar-collapse" id="navbarSistema">
+
+        <!-- Menú izquierdo -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <!-- Todos los usuarios autenticados pueden ver la lista -->
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/usuarios"
+              routerLinkActive="active"
+            >
+              Ver usuarios
+            </a>
+          </li>
+
+          <!-- Todos pueden acceder a su perfil -->
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/perfil"
+              routerLinkActive="active"
+            >
+              Mi perfil
+            </a>
+          </li>
+
+          <!-- Solo ADMIN puede agregar libros -->
+          @if (esAdmin()) {
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/agregar"
+                routerLinkActive="active"
+              >
+                Agregar Ususrio
+              </a>
+            </li>
+          }
+        </ul>
+
+        <!-- Zona derecha -->
+        <div class="d-flex align-items-center gap-3 flex-column flex-lg-row mt-3 mt-lg-0">
+
+          <!-- Información del usuario -->
+          <div class="usuario-box text-center text-lg-end">
+            <div class="fw-semibold nombre-usuario">
+              {{ usuarioActual()?.nombre }}
+            </div>
+            <div class="small rol-usuario">
+              Rol: {{ usuarioActual()?.rol }}
+            </div>
+          </div>
+
+          <!-- Botón logout -->
+          <button
+            type="button"
+            class="btn btn-outline-light btn-sm"
+            (click)="cerrarSesion()"
+          >
+            Cerrar sesión
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+}

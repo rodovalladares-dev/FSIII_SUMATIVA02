@@ -1,0 +1,60 @@
+<!-- ==========================================================
+     Semana 3 - usuario-detalle.html
+     Vista de detalle para mostrar un solo usuario
+     ========================================================== -->
+
+<div class="card border-0 shadow-lg" *ngIf="usuario; else sinUsuario">
+  <div class="card-header bg-info text-white fw-semibold">
+    <i class="bi bi-person-badge-fill me-2"></i> Detalle del Usuario
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <i class="bi bi-hash me-2 text-secondary"></i>
+        <strong>ID:</strong> {{ usuario.id }}
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-person-fill me-2 text-secondary"></i>
+        <strong>Nombre:</strong> {{ usuario.nombre }}
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-envelope-fill me-2 text-secondary"></i>
+        <strong>Email:</strong> {{ usuario.email }}
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-shield-lock-fill me-2 text-secondary"></i>
+        <strong>Rol:</strong>
+        <span class="badge bg-primary">{{ usuario.rol }}</span>
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-calendar-date-fill me-2 text-secondary"></i>
+        <strong>Fecha de registro:</strong> {{ usuario.fecha | date:'dd-MM-yyyy' }}
+      </li>
+    </ul>
+
+    <!-- Botones de acción -->
+    <div class="mt-4 d-flex justify-content-end">
+      <a class="btn btn-secondary me-2" [routerLink]="['/usuarios']">
+        <i class="bi bi-arrow-left-circle me-1"></i> Volver
+      </a>
+      <a class="btn btn-warning" [routerLink]="['/editar', usuario.id]">
+        <i class="bi bi-pencil-square me-1"></i> Editar
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Caso sin usuario -->
+<ng-template #sinUsuario>
+  <div class="alert alert-warning text-center">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+    No se pudo cargar el usuario.
+  </div>
+
+  <div class="text-center mt-3">
+    <a class="btn btn-secondary" [routerLink]="['/usuarios']">
+      <i class="bi bi-arrow-left-circle me-1"></i> Volver a la lista
+    </a>
+  </div>
+</ng-template>

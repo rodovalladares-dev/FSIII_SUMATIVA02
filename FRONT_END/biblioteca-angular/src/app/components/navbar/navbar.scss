@@ -1,0 +1,21 @@
+// ==========================================================
+// Semana 5 - navbar.scss
+// Estilos del navbar principal
+// ==========================================================
+
+.navbar-principal {
+  background: linear-gradient(90deg, #0d6efd 0%, #6f42c1 100%);
+}
+
+.nombre-usuario {
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.rol-usuario {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.usuario-box {
+  min-width: 180px;
+}

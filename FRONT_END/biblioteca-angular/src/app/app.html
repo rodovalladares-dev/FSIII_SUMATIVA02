@@ -1,0 +1,36 @@
+<!-- ==========================================================
+     Semana 3 - app.html
+     Contenedor principal de la aplicación Angular
+     ========================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <!-- Marca 
+    <a class="navbar-brand fw-bold" [routerLink]="['/usuarios']">
+      <i class="bi bi-people-fill me-2"></i> Usuarios Angular
+    </a>-->
+
+    <!-- Botón hamburguesa para móviles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Contenido de la barra -->
+    <div class="collapse navbar-collapse" id="navbarContenido">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/agregar']">
+            <i class="bi bi-person-plus-fill me-1"></i> Agregar Usuario
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenedor principal -->
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>

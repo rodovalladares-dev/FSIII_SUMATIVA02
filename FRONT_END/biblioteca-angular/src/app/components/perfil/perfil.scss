@@ -1,0 +1,42 @@
+// ==========================================================
+// Semana 5 - perfil.scss
+// Estilos de la vista de perfil
+// ==========================================================
+
+.perfil-card {
+  border-radius: 16px;
+}
+
+.avatar-perfil {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d6efd 0%, #6f42c1 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.info-box {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 14px 16px;
+  height: 100%;
+}
+
+.info-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #212529;
+}

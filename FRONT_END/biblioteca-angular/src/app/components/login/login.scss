@@ -1,0 +1,76 @@
+.login-wrapper {
+  background: linear-gradient(135deg, #fcefee, #e8f6f3);
+  min-height: 100vh;
+}
+
+.login-card {
+  background-color: #fffafc;
+}
+
+.titulo-sistema {
+  color: #6c5ce7; /* Lavanda pastel */
+  font-weight: bold;
+}
+
+.form-label {
+  color: #6c5ce7;
+}
+
+.form-control {
+  border: 1px solid #dfe6e9;
+  border-radius: 0.75rem;
+}
+
+.btn-login {
+  background-color: #a29bfe; /* Lavanda pastel */
+  color: white;
+  transition: 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #6c5ce7;
+}
+
+.link-pastel {
+  color: #00b894; /* Verde menta */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-pastel:hover {
+  text-decoration: underline;
+}
+
+.btn-demo-admin {
+  background-color: #fab1a0; /* Durazno pastel */
+  color: #2d3436;
+  border: none;
+}
+
+.btn-demo-admin:hover {
+  background-color: #ff7675;
+  color: white;
+}
+
+.btn-demo-biblio {
+  background-color: #81ecec; /* Celeste pastel */
+  color: #2d3436;
+  border: none;
+}
+
+.btn-demo-biblio:hover {
+  background-color: #00cec9;
+  color: white;
+}
+
+.alert-danger {
+  background-color: #ffe5e5;
+  color: #d63031;
+  border: none;
+}
+
+.alert-success {
+  background-color: #e8f9e9;
+  color: #2d6a4f;
+  border: none;
+}

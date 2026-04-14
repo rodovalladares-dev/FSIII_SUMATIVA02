@@ -1,0 +1,20 @@
+/* Semana 3 - styles.scss */
+/* Estilos globales base del proyecto.
+   Aquí importamos Bootstrap y dejamos una base simple para toda la aplicación. */
+
+@use 'bootstrap/scss/bootstrap';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f9fa;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}

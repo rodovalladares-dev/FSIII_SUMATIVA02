@@ -1,0 +1,145 @@
+<!-- ==========================================================
+     Semana 5 - registro.html
+     Vista de registro de usuarios con diseño pastel
+     ========================================================== -->
+
+<div class="registro-wrapper py-4">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="card registro-card shadow-lg border-0 rounded-4">
+          <div class="card-body p-4 p-md-5">
+
+            <!-- Encabezado -->
+            <div class="text-center mb-4">
+              <h2 class="titulo-registro mb-2">Registro de Usuario</h2>
+              <p class="text-muted mb-0">
+                Crea un nuevo usuario para el sistema de biblioteca.
+              </p>
+            </div>
+
+            <!-- Mensajes -->
+            <div class="alert pastel-alert-danger" *ngIf="mensajeError">
+              {{ mensajeError }}
+            </div>
+
+            <div class="alert pastel-alert-success" *ngIf="mensajeExito">
+              {{ mensajeExito }}
+            </div>
+
+            <!-- Formulario -->
+            <form #registroForm="ngForm" (ngSubmit)="registrar(registroForm)" novalidate>
+              <div class="row g-3">
+
+                <!-- Nombre -->
+                <div class="col-12 col-md-6">
+                  <label for="nombre" class="form-label fw-semibold">Nombre</label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    class="form-control pastel-input"
+                    [(ngModel)]="nombre"
+                    #nombreModel="ngModel"
+                    required
+                    minlength="3"
+                    placeholder="Ej: María González"
+                  />
+                  <div class="text-danger small mt-1" *ngIf="nombreModel.invalid && nombreModel.touched">
+                    <div *ngIf="nombreModel.errors?.['required']">El nombre es obligatorio.</div>
+                    <div *ngIf="nombreModel.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</div>
+                  </div>
+                </div>
+
+                <!-- Correo -->
+                <div class="col-12 col-md-6">
+                  <label for="correo" class="form-label fw-semibold">Correo electrónico</label>
+                  <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    class="form-control pastel-input"
+                    [(ngModel)]="correo"
+                    #correoModel="ngModel"
+                    required
+                    email
+                    placeholder="usuario@biblioteca.cl"
+                  />
+                  <div class="text-danger small mt-1" *ngIf="correoModel.invalid && correoModel.touched">
+                    <div *ngIf="correoModel.errors?.['required']">El correo es obligatorio.</div>
+                    <div *ngIf="correoModel.errors?.['email']">Debes ingresar un correo válido.</div>
+                  </div>
+                </div>
+
+                <!-- Contraseña -->
+                <div class="col-12 col-md-6">
+                  <label for="contrasena" class="form-label fw-semibold">Contraseña</label>
+                  <input
+                    type="password"
+                    id="contrasena"
+                    name="contrasena"
+                    class="form-control pastel-input"
+                    [(ngModel)]="contrasena"
+                    #contrasenaModel="ngModel"
+                    required
+                    placeholder="Crea una contraseña segura"
+                  />
+                  <div class="form-text">
+                    Debe tener entre 8 y 20 caracteres, letras, números y un carácter especial.
+                  </div>
+                </div>
+
+                <!-- Confirmar contraseña -->
+                <div class="col-12 col-md-6">
+                  <label for="confirmarContrasena" class="form-label fw-semibold">Confirmar contraseña</label>
+                  <input
+                    type="password"
+                    id="confirmarContrasena"
+                    name="confirmarContrasena"
+                    class="form-control pastel-input"
+                    [(ngModel)]="confirmarContrasena"
+                    #confirmarContrasenaModel="ngModel"
+                    required
+                    placeholder="Repite la contraseña"
+                  />
+                  <div class="text-danger small mt-1" *ngIf="confirmarContrasenaModel.invalid && confirmarContrasenaModel.touched">
+                    <div *ngIf="confirmarContrasenaModel.errors?.['required']">Debes confirmar la contraseña.</div>
+                  </div>
+                </div>
+
+                <!-- Rol -->
+                <div class="col-12 col-md-6">
+                  <label for="rol" class="form-label fw-semibold">Rol</label>
+                  <select id="rol" name="rol" class="form-select pastel-select" [(ngModel)]="rol" required>
+                    <option value="ADMIN">ADMIN</option>
+                    <option value="BIBLIOTECARIO">BIBLIOTECARIO</option>
+                  </select>
+                </div>
+
+                <!-- Activo -->
+                <div class="col-12 col-md-6">
+                  <label for="activo" class="form-label fw-semibold">Estado</label>
+                  <select id="activo" name="activo" class="form-select pastel-select" [(ngModel)]="activo" required>
+                    <option [ngValue]="true">Activo</option>
+                    <option [ngValue]="false">Inactivo</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Botones -->
+              <div class="d-flex gap-2 flex-wrap mt-4">
+                <button type="submit" class="btn btn-pastel-primary">
+                  Registrar usuario
+                </button>
+                <a class="btn btn-pastel-secondary" routerLink="/login">
+                  Volver al login
+                </a>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+.registro-wrapper {
+  background: linear-gradient(135deg, #fcefee, #e8f6f3);
+  min-height: 100vh;
+}
+
+.registro-card {
+  background-color: #fffafc;
+}
+
+.titulo-registro {
+  color: #6c5ce7; /* Lavanda pastel */
+  font-weight: bold;
+}
+
+.pastel-input, .pastel-select {
+  border: 1px solid #dfe6e9;
+  border-radius: 0.75rem;
+}
+
+.btn-pastel-primary {
+  background-color: #a29bfe; /* Lavanda pastel */
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-pastel-primary:hover {
+  background-color: #6c5ce7;
+  box-shadow: 0 4px 12px rgba(162, 155, 254, 0.4);
+}
+
+.btn-pastel-secondary {
+  background-color: #81ecec; /* Celeste pastel */
+  color: #2d3436;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-pastel-secondary:hover {
+  background-color: #00cec9;
+  color: white;
+  box-shadow: 0 4px 12px rgba(129, 236, 236, 0.4);
+}
+
+.pastel-alert-danger {
+  background-color: #ffe5e5;
+  color: #d63031;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.pastel-alert-success {
+  background-color: #e8f9e9;
+  color: #2d6a4f;
+  border: none;
+  border-radius: 0.5rem;
+}
